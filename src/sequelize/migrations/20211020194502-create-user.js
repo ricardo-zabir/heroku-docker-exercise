@@ -7,26 +7,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      firstName: {
-        type: Sequelize.STRING,
-      },
-      lastName: {
-        type: Sequelize.STRING,
-      },
-      email: {
-        type: Sequelize.STRING,
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
+      firstName: { type: Sequelize.STRING },
+      lastName: { type: Sequelize.STRING },
+      email: { type: Sequelize.STRING },
+      createdAt: { allowNull: false, type: Sequelize.DATE },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },
     });
   },
-  down: async (queryInterface, Sequelize) => {
+  down: async (queryInterface, _Sequelize) => {
     await queryInterface.dropTable('Users');
   },
 };
